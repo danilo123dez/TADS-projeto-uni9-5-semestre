@@ -37,7 +37,7 @@ class Empresa extends model
                 $count++;
             }
 
-            $sql = $this->db->query("SELECT Razao_social, Senha FROM Empresa WHERE $where");
+            $sql = $this->db->query("SELECT id_empresa, Nome_fantasia, Senha FROM Empresa WHERE $where");
             if($sql->rowCount() > 0){
                 $sql = $sql->fetch();
                 return $sql;

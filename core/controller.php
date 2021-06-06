@@ -39,6 +39,16 @@ class controller
         return $this->title;
     }
 
+    public function setTitlePage($t)
+    {
+        $this->titlePage = $t;
+    }
+
+    public function getTitlePage()
+    {
+        return $this->titlePage;
+    }
+
     public function setCss(array $css)
     {
         $this->css = $css;

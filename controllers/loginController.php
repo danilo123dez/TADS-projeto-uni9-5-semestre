@@ -32,7 +32,15 @@ class loginController extends controller
 
         $_SESSION['logged'] = true;
         $_SESSION['user'] = $empresa['Nome_fantasia'];
+        $_SESSION['id_empresa'] = $empresa['id_empresa'];
 
+        header("Location: ".BASE_URL."");
+        die();
+    }
+
+    public function loggout(){
+        unset($_SESSION['user']);
+        unset($_SESSION['logged']);
         header("Location: ".BASE_URL."");
         die();
     }

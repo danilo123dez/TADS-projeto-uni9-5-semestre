@@ -32,8 +32,14 @@
 
         </nav>
         <div class="navbar-auth">
+            <?php if(!empty($_SESSION['logged'])){ ?>
+            <a class="navbar-auth-login" href="#">Bem vindo, <?= $_SESSION['user'] ?></a>
+            <a class="navbar-auth-register" href="/painelpedidos">Acesso ao painel</a>
+            <a class="navbar-auth-login" href="/login/loggout">sair</a>
+            <?php }else{ ?>
             <a class="navbar-auth-login" href="/login">login</a>
             <a class="navbar-auth-register" href="/cadastro">cadastrar-se</a>
+            <?php } ?>
         </div>
         <span class="hamburguer">
                     <img class="open active" src="assets/img/svg/menu.svg" alt="" srcset="">
@@ -47,8 +53,14 @@
         <a href="#">clientes</a>
         <a href="#">fale conosco</a>
         <div class="navbar-auth-mobile">
-            <a class="navbar-auth-login" href="">login</a>
-            <a class="navbar-auth-register" href="">cadastrar-se</a>
+            <?php if(!empty($_SESSION['logged'])){ ?>
+                <a class="navbar-auth-login" href="#">Bem vindo, <?= $_SESSION['user'] ?></a>
+                <a class="navbar-auth-register" href="/painelpedidos">Acesso ao painel</a>
+                <a class="navbar-auth-login" href="/login/loggout">sair</a>
+            <?php }else{ ?>
+                <a class="navbar-auth-login" href="/login">login</a>
+                <a class="navbar-auth-register" href="/cadastro">cadastrar-se</a>
+            <?php } ?>
         </div>
     </nav>
 </header>
